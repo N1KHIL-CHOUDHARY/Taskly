@@ -145,7 +145,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </div>
           )}
 
-          {/* Theme toggle */}
+          
           <button
             className="nav-theme-btn"
             onClick={toggleTheme}
