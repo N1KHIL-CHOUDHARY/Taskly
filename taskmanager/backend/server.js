@@ -1,20 +1,40 @@
-const http = require('http');
-const dotenv = require('dotenv');
-const app = require('./app');
-const connectDB = require('./config/db');
+  const http = require('http');
+  const dotenv = require('dotenv');
+  const app = require('./app');
+  const cron = require('node-cron');
+const axios = require('axios');
+  const connectDB = require('./config/db');
 
-dotenv.config();
+  dotenv.config();
 
-const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 5000;
 
-const startServer = async () => {
-  await connectDB();
+  const startCron = () => {
+  cron.schedule('*/14 * * * *', async () => {
+    try {
+      console.log('Running 14-minute cron job...');
 
-  const server = http.createServer(app);
+      await axios.get(`${process.env.BASE_URL}/api/health`);
 
-  server.listen(PORT, () => {
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+      console.log('Health check successful');
+    } catch (error) {
+      console.error('Cron failed:', error.message);
+    }
   });
 };
 
-startServer();
+  const startServer = async () => {
+    await connectDB();
+
+    const server = http.createServer(app);
+
+    server.listen(PORT, () => {
+      console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    });
+    startCron(); 
+  };
+
+  startServer();
+
+
+  
