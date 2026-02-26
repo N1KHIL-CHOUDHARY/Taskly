@@ -1,8 +1,8 @@
-Project Overview
+## Project Overview
 
 Taskly is a web-based task manager built with a Node.js/Express backend and a React/Vite frontend. It features user authentication, database integration with MongoDB, and a cron job system to maintain service health.
 Tech Stack
-Backend
+## Backend
 
     Environment: Node.js
 
@@ -16,7 +16,7 @@ Backend
 
     Validation: Express-validator
 
-Frontend
+## Frontend
 
     Framework: React 19
 
@@ -28,8 +28,8 @@ Frontend
 
     Notifications: React Hot Toast
 
-Project Structure
-Backend (/taskmanager/backend)
+## Project Structure
+## Backend (/taskmanager/backend)
 
     server.js: The entry point that initializes the database connection, starts the Express server, and schedules cron jobs.
 
@@ -43,7 +43,7 @@ Backend (/taskmanager/backend)
 
     middleware/: Includes authentication checks and error handling logic.
 
-Frontend (/taskmanager/frontend-temp)
+## Frontend (/taskmanager/frontend-temp)
 
     src/pages/: Contains main views like Dashboard, Login, and Register.
 
@@ -53,7 +53,7 @@ Frontend (/taskmanager/frontend-temp)
 
     src/context/: State management for user authentication and UI themes.
 
-Key Features
+## Key Features
 
     Task Management: Create, read, update, and delete tasks with status tracking.
 
@@ -63,7 +63,7 @@ Key Features
 
     Modern UI: A responsive interface built with Tailwind CSS and React 19.
 
-Getting Started
+## Getting Started
 1. Backend Setup
 
     Navigate to the backend directory.
