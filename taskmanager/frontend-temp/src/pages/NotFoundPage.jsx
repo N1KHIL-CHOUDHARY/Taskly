@@ -59,7 +59,7 @@ const NotFoundPage = ({ theme, toggleTheme }) => {
           fontSize: '320px',
           fontFamily: "'DM Serif Display', serif",
           fontWeight: '400',
-          color: dark ? 'rgba(255,255,255,0.025)' : 'rgba(0,0,0,0.04)',
+          color: 'rgba(0,0,0,0.04)',
           userSelect: 'none',
           lineHeight: 1,
           letterSpacing: '-10px',

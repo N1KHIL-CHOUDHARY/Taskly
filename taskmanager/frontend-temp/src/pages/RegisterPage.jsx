@@ -62,36 +62,7 @@ const RegisterPage = ({ theme, toggleTheme }) => {
         .btn-spin     { animation: spin 0.8s linear infinite; }
       `}</style>
 
-      {/* Theme toggle */}
-      <button
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
-        className={`fixed right-6 top-6 z-10 flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-150 ${
-          dark
-            ? "border-white/10 bg-white/[0.06] text-white/60 hover:bg-white/[0.10] hover:text-white"
-            : "border-black/10 bg-black/[0.05] text-black/50 hover:bg-black/[0.08] hover:text-black"
-        }`}
-      >
-        {dark ? (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8b89a" strokeWidth="2" strokeLinecap="round">
-            <circle cx="12" cy="12" r="5" />
-            {[0,45,90,135,180,225,270,315].map((deg, i) => {
-              const r = (deg * Math.PI) / 180;
-              return (
-                <line
-                  key={i}
-                  x1={(12 + 8 * Math.cos(r)).toFixed(2)} y1={(12 + 8 * Math.sin(r)).toFixed(2)}
-                  x2={(12 + 10 * Math.cos(r)).toFixed(2)} y2={(12 + 10 * Math.sin(r)).toFixed(2)}
-                />
-              );
-            })}
-          </svg>
-        ) : (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-        )}
-      </button>
+      
 
       {/* Card */}
       <div className="reg-animate w-full max-w-[420px]">
